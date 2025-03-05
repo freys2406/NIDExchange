@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Offered | NID Exchange</title>
+    <link rel="stylesheet" href="assets/css/courses.css">
+  
+      
+</head>
+<body>
+    <header>
+        <h1>Courses Offered</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="student-directory.html">Find an Exchange Student</a>
+            <a href="gallery.html">Explore the Campus</a>
+            <a href="wish-i-knew.html">What I Wish I Knew</a>
+            <a href="courses.html">Courses Offered</a>
+        </nav>
+    </header>
+
+    <section id="course-container">
+        <!-- LEFT COLUMN: Course List -->
+        <div id="course-menu">
+            <details>
+                <summary>Bachelor of Design (B.Des)</summary>
+                
+                <details>
+                    <summary>Communication Design</summary>
+                    <ul>
+                        <li><details><summary>Graphic Design</summary></details></li>
+                        <li><details><summary>Film and Video Design</summary></details></li>
+                        <li><details><summary>Animation Design</summary></details></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Industrial Design</summary>
+                    <ul>
+                        <li><details><summary>Ceramic and Glass Design</summary></details></li>
+                        <li><details><summary>Furniture and Interior Design</summary></details></li>
+                        <li><details><summary>Product Design</summary></details></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Textile, Apparel, Lifestyle & Accessory Design</summary>
+                    <ul>
+                        <li><details><summary>Textile Design</summary></details></li>
+                    </ul>
+                </details>
+            </details>
+
+            <details>
+                <summary>Master of Design (M.Des)</summary>
+                
+                <details>
+                    <summary>Communication Design</summary>
+                    <ul>
+                        <li><details><summary>Graphic Design</summary></details></li>
+                        <li><details><summary>Film and Video Communication</summary></details></li>
+                        <li><details><summary>Animation Film Design</summary></details></li>
+                        <li><details><summary>Interaction Design</summary></details></li>
+                        <li><details><summary>New Media Design</summary></details></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Industrial Design</summary>
+                    <ul>
+                        <li><details><summary>Product Design</summary></details></li>
+                        <li><details><summary>Furniture & Interior Design</summary></details></li>
+                        <li><details><summary>Transportation & Automobile Design</summary></details></li>
+                        <li><details><summary>Universal Design</summary></details></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Textile, Apparel, Lifestyle & Accessory Design</summary>
+                    <ul>
+                        <li><details><summary>Textile Design</summary></details></li>
+                        <li><details><summary>Apparel Design</summary></details></li>
+                        <li><details><summary>Strategic Design Management</summary></details></li>
+                    </ul>
+                </details>
+            </details>
+        </div>
+
+        <!-- RIGHT COLUMN: Course Details (Placeholder) -->
+        <div id="course-details">
+            <p>Select a course to view details.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 NID Exchange Guide</p>
+    </footer>
+    
+<img src="assets/data/courses.svg" id="floating-illustration">
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const courseItems = document.querySelectorAll("#course-menu details details details summary");
+
+    courseItems.forEach(item => {
+        item.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevents parent details from closing
+            const courseName = this.textContent;
+            document.getElementById("course-details").innerHTML = `
+                <h2>${courseName}</h2>
+                <p>This is a placeholder description for the ${courseName} course. More details will be added soon.</p>
+            `;
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>

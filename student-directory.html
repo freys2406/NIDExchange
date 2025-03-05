@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find an Exchange Student | NID Exchange</title>
+    <link rel="stylesheet" href="assets/css/styling.css">
+    <script defer src="assets/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Find an Exchange Student</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Explore the Campus</a>
+            <a href="wish-i-knew.html">What I Wish I Knew</a>
+            <a href="courses.html">Courses Offered</a>
+            <a href="student-directory.html">Find an Exchange Student</a>
+        </nav>
+    </header>
+
+    <section class="filter-section">
+        <div class="tabs">  <!-- Wrapped buttons in a div to stack them -->
+            <button id="all" class="tab-button active-tab">All</button>
+            <button id="university" class="tab-button">Sort by University</button>
+            <button id="country" class="tab-button">Sort by Country</button>
+        </div>
+    </section>
+
+    <section id="student-list" class="student-list">
+        <!-- Student cards will load dynamically here -->
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 NID Exchange Guide</p>
+    </footer>
+    <img src="assets/data/find.svg" id="floating-illustration">
+</body>
+</html>
