@@ -1,0 +1,193 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 400;
+}
+
+/* Font Styling */
+.host-grotesk {
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.grey-qo {
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6rem; /* Adjust as needed */
+}
+
+/* Full-Screen Background Video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay for Readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+/* Reduce gap between elements in hero section */
+.subheading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 0.5s;
+    margin-bottom: -5px; /* Reduce space below subheading */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin: 5px 0;
+    max-width: 90%;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 1s;
+}
+
+/* Quick Links */
+.quick-links-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 1.5s;
+}
+
+
+.directional-card::after {  
+    position: absolute;
+    right: 15px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.directional-card:hover::after {
+    transform: translateX(5px);
+}
+
+
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Directional Cards with Neon Accents */
+.directional-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    width: 280px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-family: "Host Grotesk", sans-serif;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+/* Neon Border & Glow Effect on Hover */
+.directional-card:hover {
+    
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8), 
+                0 0 30px rgba(0, 0, 255, 0.8), 
+                0 0 45px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+/* Subtle Gradient Overlay on Hover */
+.directional-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(45deg, rgba(138, 43, 226, 0.3), rgba(0, 0, 255, 0.3), rgba(255, 255, 255, 0.3)); 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0;
+}
+
+/* Activate Neon Overlay on Hover */
+.directional-card:hover::before {
+    opacity: 0.5;
+}
+
+/* Ensure Text Stays on Top */
+.directional-card h3,
+.directional-card p {
+    position: relative;
+    z-index: 1;
+}
+
+.directional-card h3 {
+    margin-bottom: 5px; /* Reduce space below heading */
+    font-size: 1rem; /* Adjust font size if needed */
+}
+
+.directional-card p {
+    margin-top: 5px; /* Reduce space above paragraph */
+    font-size: 1rem; /* Adjust font size for better fit */
+    line-height: 1.4; /* Slightly tighter spacing */
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards 2s;
+}

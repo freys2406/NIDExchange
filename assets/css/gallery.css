@@ -1,0 +1,207 @@
+/* General Styles */
+@font-face {
+    font-family: "Host Grotesk";
+    src: url("assets/fonts/HostGrotesk.woff2") format("woff2"),
+         url("assets/fonts/HostGrotesk.woff") format("woff");
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+body {
+    font-family: "Host Grotesk", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1F1A5D;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background: #5B2C6F;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #FF3B3F;
+}
+
+/* Gallery Layout */
+#gallery-container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    min-height: 400px; 
+    align-items: flex-start; /* Fix alignment */
+    gap: 20px;
+}
+
+/* Category List */
+#gallery-menu {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* Display Section */
+#gallery-display {
+    width: 70%;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Styling */
+#gallery-display img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Accordion Styling */
+details {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+summary {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 0;
+    color: #333;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
+}
+
+summary:hover, details[open] summary {
+    color: #5B2C6F;
+    background: rgba(91, 44, 111, 0.1);
+    padding: 10px;
+}
+
+/* Carousel */
+#carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#carousel:hover #carousel-caption {
+    opacity: 1;
+}
+
+/* Carousel Buttons */
+#prev-btn, #next-btn {
+    background: #0044CC;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    background: #FF3B3F;
+}
+
+/* Floating Illustration */
+#floating-illustration {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    width: 250px;
+    opacity: 0.8;
+    z-index: 100;
+    pointer-events: none;
+    animation: floatAnimation 4s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    background: #5B2C6F;
+    padding: 15px;
+} 
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #gallery-container {
+        flex-direction: column;
+    }
+
+    #gallery-menu {
+        width: 100%;
+        border-right: none;
+    }
+
+    #gallery-display {
+        width: 100%;
+        padding-left: 0;
+    }
+}

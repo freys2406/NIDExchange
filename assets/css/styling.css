@@ -1,0 +1,200 @@
+/* === Global Styles === */
+body {
+    font-family: "Host Grotesk", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #03073F; /* Dark blue background */
+    color: #EEF3F3; /* Off-white text */
+    overflow-x: hidden;
+}
+
+/* === Header === */
+header {
+    background: #6A00D3; /* Purple header */
+    color: #EEF3F3;
+    padding: 15px;
+    text-align: center;
+}
+
+/* === Navigation Bar === */
+nav a {
+    color: #EEF3F3;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FF6371; /* Red hover accent */
+}
+
+/* === Tabs === */
+.tabs {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center them horizontally */
+    gap: 10px; /* Better spacing */
+    position: absolute;
+    left: 30px; /* Move slightly right */
+    top: 215px; /* Move down a bit */
+}
+
+.tab-button {
+    width: 190px; /* Slightly wider */
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px; /* More rounded */
+    background: #ff6b6b; /* Vibrant red */
+    color: white;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25); /* Softer shadow */
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.tab-button:hover {
+    background: #e63946; /* Darker red on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.active-tab {
+    background: #ff4f4f; /* Slightly different shade for active */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+/* === Student List Layout === */
+.student-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Reduces unnecessary space */
+    padding: 20px;
+    margin-left: 250px; /* Ensure alignment */
+    align-items: flex-start; /* Keep items aligned at the top */
+}
+
+/* === Student Cards Container (Ensures Even Distribution) === */
+.student-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Consistent spacing */
+    justify-content: space-between; /* Distribute evenly */
+    align-items: flex-start; /* Align cards at the top */
+}
+
+/* === Student Card Styling === */
+.student-card {
+    background: #11134F;
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    flex: 1 1 calc(33.33% - 1.5rem); /* Ensures 3 cards per row */
+    max-width: 320px; /* Slightly flexible */
+    min-width: 250px; /* Prevents cards from shrinking too much */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+}
+
+.student-card:hover {
+    background: #1D1A63;
+    transform: translateY(-3px);
+}
+
+/* === Student Name === */
+.student-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FF7575;
+    margin: 20px 0 10px;
+    line-height: 1.2;
+}
+
+/* === General Text === */
+.student-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    opacity: 0.85;
+}
+
+/* === Email Link === */
+.student-card a {
+    color: #FF7575;
+    font-size: 0.8  rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.student-card a:hover {
+    color: #FF4D4D;
+}
+
+
+/* Ensure university names are white */
+.group-heading {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;  /* Make text white */
+    text-align: left;
+    margin: 10px;
+    padding: 5px;
+}
+
+
+/* === Responsive Layout === */
+@media (max-width: 1024px) {
+    .student-card {
+        flex: 1 1 calc(50% - 1.5rem); /* Two-column layout on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .student-card {
+        flex: 1 1 calc(50% - 1.5rem); /* Two-column layout on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .student-cards-container {
+        justify-content: center; /* Center cards in smaller screens */
+    }
+    .student-card {
+        flex: 1 1 100%; /* Single column on very small screens */
+    }
+}
+
+/* Move illustration to top right */
+#floating-illustration {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px;
+    width: 180px; /* Adjust for better fit */
+    opacity: 0.8;
+    z-index: 100;
+    pointer-events: none;
+    animation: floatAnimation 4s infinite ease-in-out;
+}
+
+/* Floating effect */
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+
+
+/* === Footer === */
+.footer {
+    background: #1F1A5D;
+    color: #EEF3F3;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+
